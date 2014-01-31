@@ -2410,10 +2410,10 @@ class Axes3D(Axes):
          - An array of colors of length N bars, to color each bar
            independently.
 
-         - An array of colors of length 6, to color the faces of the
+         - An array of colors of length 5, to color the faces of the
            bars similarly.
 
-         - An array of colors of length 6 * N bars, to color each face
+         - An array of colors of length 5 * N bars, to color each face
            independently.
 
          When coloring the faces of the boxes specifically, this is
@@ -2424,7 +2424,6 @@ class Axes3D(Axes):
           3. -Y
           4. +Y
           5. -X
-          6. +X
 
         Keyword arguments are passed onto
         :func:`~mpl_toolkits.mplot3d.art3d.Poly3DCollection`
@@ -2484,7 +2483,7 @@ class Axes3D(Axes):
         elif len(color) == len(x):
             # bar colors specified, need to expand to number of faces
             for c in color:
-                facecolors.extend([c] * 6)
+                facecolors.extend([c] * 5)
         else:
             # a single color specified, or face colors specified explicitly
             facecolors = list(colorConverter.to_rgba_array(color))
